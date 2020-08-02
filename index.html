@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Comments</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Dosis&display=swap" rel="stylesheet"> 
+</head>
+<body>
+        <div class="container">
+            <div class="mainwrap">
+                <textarea rows="3" class="mainc" id="rootcontent" placeholder="comment here!"></textarea>
+                <button class="submit" id="submitroot">Submit</button>
+            </div>
+            <div class="comments" id="comments" data-parentid="root">
+            </div>
+        </div>
+        
+</body>
+
+<!-- Importing and Initializing Firebase -->
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+<script type="module" src="app.js"></script>
+</html>

@@ -1,0 +1,193 @@
+html {
+    background: #100e17;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 750px;
+    margin: auto;
+}
+
+
+/*****************************************************
+               ADD ROOT COMMENT
+*****************************************************/
+.mainwrap {
+    width: 100%;
+    padding:  5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.mainc {
+    width: 500px;
+    border: 0;
+    outline: none;
+    min-height: 40px;
+    font-size: 30px;
+    line-height: 42px;
+    background: #312d3c;
+    border-radius: 8px;
+    resize: none;
+    color: #fff;
+    padding: 14px;
+}
+
+.mainc:focus {
+    border: 1px solid #e52e71;
+border-radius: 8px;
+}
+
+.mainc[placeholder] {
+    font-size:22px; 
+    color: white;
+}
+
+.submit {
+    color: #fff !important;
+    border: 0;
+    border-radius: 8px !important;
+    padding: 1rem 1.5rem;
+    line-height: 1.4;
+    font-size: 100%;
+    cursor: pointer;
+    background-image: linear-gradient(to top left,#AD343E,#F2AF29) !important;
+}
+
+
+/*****************************************************
+               ALL COMMENTS
+*****************************************************/
+.comments {
+    margin: 30px 0;
+}
+
+.comment {
+    background: #17141d;
+    color: #c2c2c2;
+    padding: 2rem;
+    border-radius: 16px;
+    margin-top: 30px;
+    padding-top: 1px;
+}
+
+.author {
+    color: #fff;
+    font-weight: 700;
+    font-size: 24px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.date {
+    color: #7a7a8c;
+}
+
+.content {
+    font-family: 'Dosis', sans-serif;
+}
+
+
+/*****************************************************
+             COMMENT EDITOR
+*****************************************************/
+.editor {
+    
+    border: 0;
+    outline: none;
+    background: #312d3c;
+    border-radius: 8px;
+    resize: none;
+    color: #fff;
+    padding: 14px;
+    width: 90%;
+    border: 1px dashed #e52e71;
+}
+
+.edit, .reply {
+    display: none;
+}
+
+.editor[placeholder] {
+    font-size:22px; 
+    color: white;
+}
+
+/*****************************************************
+                BUTTONS
+*****************************************************/
+
+.btnarea {
+    /* display: flex;
+    justify-content: end; */
+    margin: 10px 0 30px 0;
+}
+
+.btnarea button {
+    background-color: transparent; 
+    border-radius: 5px;
+    text-transform: uppercase;
+    padding: 10px 25px;
+}
+
+.editbtn {
+    color: #00bcd4; 
+    border: 1px solid #00bcd4; 
+}
+
+.editbtn:hover {
+    color: #fff;
+    background-color:#00bcd4 ;
+}
+
+.replybtn {
+    color: #ff5722; 
+    border: 1px solid #ff5722; 
+    margin-left: 20px;
+}
+
+.replybtn:hover {
+    color: #fff;
+    background-color: #ff5722;
+}
+
+.delbtn {
+    color: rebeccapurple; 
+    border: 1px solid rebeccapurple; 
+    margin-left: 20px;
+}
+
+.delbtn:hover {
+    color: #fff;
+    background-color: rebeccapurple;
+}
+
+
+.editmodebtns, .replybtns {
+    display: none;
+}
+
+.savebtn, .addReplybtn {
+    color: greenyellow; 
+    border: 1px solid greenyellow; 
+    margin-left: 20px;
+}
+
+.savebtn:hover, .addReplybtn:hover {
+    color: #fff;
+    background-color: greenyellow;
+}
+
+.cancelbtn, .cancelReplybtn {
+    color: red; 
+    border: 1px solid red; 
+}
+
+.cancelbtn:hover, .cancelReplybtn:hover {
+    color: #fff;
+    background-color: red;
+}
+
+

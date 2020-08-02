@@ -13,9 +13,13 @@ This is a vanilla JS solution for a multi-tiered comments system.
  ## Current Schema Design
 
  id: Autogen
+
  author: String
+
  content: String
+
  lvl: Number    `This holds the horizontal depth of the comment`
+ 
  replies: Array<DocumentReference>
 
 

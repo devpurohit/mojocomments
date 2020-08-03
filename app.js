@@ -56,11 +56,11 @@ async function addReply(e) {
     const author = 'Rahul';
     const commentData = { content, author, replies: [], createdAt: (new Date()).toDateString(),lvl: +parentLvl+1};
     const savedComment = await commentService.addComment(commentData);
+    const savedCommentData = await savedComment.get();
+    commentUtil.addReplyCommentDom(replyWrapper, {...savedCommentData.data(), id: savedCommentData.id})
     const parentComment = await commentService.getComment(parentCommentId);
     parentComment.replies.push(savedComment);
     commentService.updateCommentReplies(parentCommentId, parentComment.replies);
-    const savedCommentData = await savedComment.get()
-    commentUtil.addReplyCommentDom(replyWrapper, {...savedCommentData.data(), id: savedCommentData.id})
 }
 
 })();

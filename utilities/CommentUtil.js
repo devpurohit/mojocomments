@@ -91,10 +91,10 @@ export class CommentUtil {
         let customStyle = `border-left: 1px dashed white;padding-left: ${(lvl+1) *30}px;`;
         
         await asyncForEach(comments, async comment => {
-            if(lvl>0) {
+           /*  if(lvl>0) {
                 let commentRef = await comment.get();
                 comment = { id: commentRef.id, ...commentRef.data()} 
-            }
+            } */
            let rootHtml = `
             <div  id="${comment.id}">
             <div class="comment">

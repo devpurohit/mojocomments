@@ -43,8 +43,14 @@ async function addRootComment() {
     const content = document.querySelector('#rootcontent').value;
     const author = 'Rahul';
     const commentData = { content, author, replies: [], createdAt: (new Date()).toDateString(),lvl: 0};
+    // Using a timestamp as a temporary id 
+    const tempId = Date.now();
+    commentUtil.addRootCommentDom({ ...commentData, id: tempId});
     const savedComment = await commentService.addComment(commentData);
-    commentUtil.addRootCommentDom({ ...commentData,id: savedComment.id});
+    // Changind id at DOM after real id received
+    const newComment = document.getElementById(tempId);
+    newComment.id=savedComment.id;
+    newComment.nextElementSibling.dataset.parentid = savedComment.id;
     comments.push({commentData, id: savedComment.id});
 }
 

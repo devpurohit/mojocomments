@@ -41,7 +41,7 @@ document.body.addEventListener( 'click', function (event ) {
  
 async function addRootComment() {
     const content = document.querySelector('#rootcontent').value;
-    const author = 'Rahul';
+    const author = 'Anonymous';
     const commentData = { content, author, replies: [], createdAt: (new Date()).toDateString(),lvl: 0};
     // Using a timestamp as a temporary id 
     const tempId = Date.now();

@@ -55,9 +55,17 @@ async function addReply(e) {
     const content = replyWrapper.querySelector('.reply').value;
     const author = 'Rahul';
     const commentData = { content, author, replies: [], createdAt: (new Date()).toDateString(),lvl: +parentLvl+1};
+
+    // Using a timestamp as a temporary id 
+    const tempId = Date.now();
+    commentUtil.addReplyCommentDom(replyWrapper, {...commentData, id: tempId});
     const savedComment = await commentService.addComment(commentData);
     const savedCommentData = await savedComment.get();
-    commentUtil.addReplyCommentDom(replyWrapper, {...savedCommentData.data(), id: savedCommentData.id})
+    const newComment = document.getElementById(tempId);
+
+    // Changind id at DOM after real id received
+    newComment.id=savedCommentData.id;
+    newComment.nextElementSibling.dataset.parentid = savedCommentData.id;
     const parentComment = await commentService.getComment(parentCommentId);
     parentComment.replies.push(savedComment);
     commentService.updateCommentReplies(parentCommentId, parentComment.replies);

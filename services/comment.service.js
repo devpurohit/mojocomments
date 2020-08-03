@@ -11,7 +11,7 @@ class CommentService {
                 .where("lvl", "==", 0)
                 .get();
             const rootComments =  snapshot.docs.map(doc => new Object({id: doc.id, ...doc.data()}));
-            //rootComments.map(async comment=> await this.getReplies(comment.replies));
+            await rootComments.map(async comment=> await this.getReplies(comment.replies));
             return rootComments;
         }
 
@@ -25,9 +25,7 @@ class CommentService {
 
         async getReplies(replies) {
             if(!replies) return;
-            await asyncForEach(replies, async (comment, index) => {
-                console.log(comment)
-                
+            await asyncForEach(replies, async (comment, index) => {                
                     let commentRef = await comment.get();
                     comment = { id: commentRef.id, ...commentRef.data()} 
                     replies[index] = comment;
